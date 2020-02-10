@@ -1,0 +1,635 @@
+/* ************************************
+** - IMPORTS
+** - COMMON
+** - HEADER
+** - CONTENT
+** - FLEX-TABLE
+** - FORM
+** - ACCORDION
+** - FOOTER
+** - MEDIA QUERIES
+**
+** ********************************* */
+/* IMPORTS */
+@import url('https://fonts.googleapis.com/css?family=Kalam:700|Montserrat:400,500,700&display=swap');
+
+/* COMMON */
+body {
+  margin: 0;
+  font-size: 16px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.message {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.site-message {
+  display: flex;
+  top: 10%;
+  position: absolute;
+  border: 2px solid black;
+  padding: 25px;
+  font-weight: 700;
+}
+
+.site-message.error {
+  background-color: pink;
+}
+
+.site-message.success {
+  background-color: lightgreen;
+}
+
+#share-to-friend {
+  display: none;
+}
+
+.btn-share {
+  display: flex;
+}
+
+.info.full-width {
+  width: 100%;
+}
+
+.results {
+  display: flex;
+}
+
+.result-bar {
+  display: flex;
+  height: 25px;
+  min-width: 5%;
+  background-color: #ffdb00;
+  border-radius: 5px;
+  font-size: 14px;
+  color: #FFFFFF;
+  justify-content: center;
+  align-items: center;
+}
+
+.logout {
+  border: 2px solid black;
+  height: 150px;
+  width: 300px;
+  text-align: center;
+  margin: 20px auto;
+}
+
+.logout>.title {
+  background-color: #333333;
+  color: #FFFFFF;
+  padding: 3px;
+}
+
+.notification {
+  padding: 20px;
+}
+
+.loader {
+  margin: auto;
+  width: 50%;
+  border: 5px solid #dedede;
+  border-top: 5px solid #3498db;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.center {
+  text-align: center;
+}
+
+.text-lead {
+  font-weight: 700;
+}
+
+.text-share {
+  text-transform: uppercase;
+  font-family: 'Kalam', cursive;
+  display: flex;
+  flex-direction: column;
+}
+
+.text-share img {
+  float: left;
+}
+
+.bg-black {
+  background-color: #363636;
+  color: #fff;
+  text-align: center;
+}
+
+.bg-white {
+  background-color: #fff;
+  color: #363636;
+}
+
+.bg-grey {
+  background-color: #f6f6f6;
+}
+
+.bg-yellow-grad {
+  background-image: linear-gradient(#ffeea2, #ffe668);
+  min-height: 30%;
+  display: flex;
+}
+
+.results-bar-yellow-grad {
+  background-image: linear-gradient(#fef63e, #fddb05);
+  min-height: 30px;
+  margin: auto;
+  color: #000;
+}
+
+.results-bar-blue-grad {
+  background-image: linear-gradient(#3c429c, #0f2776);
+  min-height: 30px;
+  margin: auto;
+  color: #fff;
+}
+
+/* HEADER */
+.navbar {
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+  top: 0;
+  overflow: hidden;
+  padding: 5px;
+  left: 0;
+}
+
+.navbar-left {
+  float: left;
+}
+
+.navbar-left img {
+  max-height: 50px;
+  padding-left: 25px;
+}
+
+.navbar>.navbar-left>a {
+  padding: 0;
+}
+
+.navbar-right {
+  float: right;
+}
+
+.navbar a {
+  color: #fff;
+  float: left;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* CONTENT */
+.content {
+  margin-top: 15vh;
+  background-color: #fff;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.content>.block {
+  display: block;
+  width: 80%;
+  margin-left: 10%;
+  margin-right: auto;
+}
+
+.teams {
+  width: 100%;
+  font-family: 'Kalam', cursive;
+  text-transform: uppercase;
+}
+
+.tag-1 {
+  font-size: 2.2em;
+}
+
+.tag-2 {
+  font-size: 1.5em;
+}
+
+.tag-3 {
+  font-size: 1.3em;
+}
+
+.tag-4 {
+  font-size: 1.1em;
+}
+
+.row {
+  width: 98%;
+  padding: 5px;
+}
+
+.team-choice {
+  width: 43%;
+  display: inline-block;
+  font-size: 1.5em;
+  padding: 7px;
+  margin-left: 1%;
+  border: 5px solid transparent;
+}
+
+input.share.winner.btn-winner:hover {
+  background-color: #015201;
+}
+
+input.share.winner.btn-winner {
+  margin: 1vh 1vw;
+  background-color: #006400;
+  justify-content: center;
+  align-items: center;
+}
+
+.center-img {
+  display: flex;
+  padding: 20px;
+  align-items: center;
+  justify-content: center;
+}
+
+.voting {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.info {
+  padding: 1%;
+  overflow: hidden;
+}
+
+.info img {
+  float: right;
+}
+
+.info-left {
+  float: left;
+}
+
+.info-text {
+  /* width: 60%; */
+  width: inherit;
+  padding: 1%;
+}
+
+.info-logo {
+  float: left;
+  width: 20%;
+}
+
+.team-choice.active-choice {
+  border: 5px solid #6bbb01;
+}
+
+/* FLEX-TABLE */
+.voter, .winner {
+  width: 100%;
+  font-size: 0.9em;
+}
+
+.flex-table {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 0 3em 0;
+  padding: 0;
+  width: 60%;
+}
+
+.flex-table.full-width {
+  width: 100%;
+}
+
+.flex-row {
+  width: 100%;
+  display: flex;
+  margin: 5px;
+}
+
+.flex-cell {
+  box-sizing: border-box;
+  flex-grow: 1;
+  width: 45%;
+  padding: 0.8em 1.2em;
+  overflow: hidden;
+  list-style: none;
+  border: solid 2px #d6d6d6;
+}
+
+.voters .flex-cell:nth-child(1), .winners .flex-cell:nth-child(1) {
+  flex-grow: 2;
+  flex-basis: 0;
+}
+
+.voters .flex-cell:nth-child(2) {
+  flex-grow: 3;
+  flex-basis: 0;
+}
+
+.flex-table>.flex-row .flex-cell {
+  width: 25%;
+}
+
+.flex-table label {
+  width: 100%;
+  font-weight: 400;
+}
+
+.flex-table input[type="radio"i] {
+  height: 100%;
+}
+
+.flex-table .first-cell {
+  width: 25%;
+}
+
+/* FORM */
+.login-form {
+  width: 100%;
+}
+
+.form-add-user div {
+  margin: 20px 5px;
+}
+
+input[type=password], input[type=text], input[type=email], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=submit], button.share {
+  width: 100%;
+  background-color: #75ce00;
+  color: #fff;
+  font-size: 1.2em;
+  text-shadow: 1px 1px 3px #000;
+  font-weight: 700;
+  padding: 12px 20px;
+  margin: 8px 0;
+  transition: 0.3s;
+}
+
+input[type=submit].share.winner {
+  width: 250px;
+}
+
+input[type=submit].share, button.share {
+  background-color: #d40c19;
+  width: 140px;
+  text-transform: uppercase;
+  font-family: 'Kalam', cursive;
+  font-size: 1.5em;
+  padding: 8px;
+  float: right;
+  margin: 1vh 5vw;
+}
+
+input[type=submit].share:hover {
+  background-color: #bd0b17;
+}
+
+input[type="submit"]:hover {
+  background-color: #72c701;
+}
+
+input[type="submit"]:active {
+  background-color: #6bbb01;
+}
+
+form-title {
+  font-size: 1.3em;
+  font-weight: 700;
+  display: inline-block;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+label {
+  font-weight: 700;
+}
+
+/* ACCORDION */
+/* This accordion css isn't mine. No use to reinvent the wheel. */
+/* Style the buttons that are used to open and close the accordion panel */
+.accordion {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  text-align: left;
+  border: none;
+  outline: none;
+  transition: 0.4s;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1em;
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.active, .accordion:hover {
+  background-color: #ccc;
+}
+
+/* Style the accordion panel. Note: hidden by default */
+.panel {
+  padding: 0 18px;
+  background-color: white;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}
+
+.panel-content {
+  margin-top: 20px;
+}
+
+.accordion:after {
+  content: '\02795';
+  /* Unicode character for "plus" sign (+) */
+  color: #777;
+  float: right;
+  margin-left: 5px;
+}
+
+.active:after {
+  content: "\2796";
+  /* Unicode character for "minus" sign (-) */
+}
+
+/* FOOTER */
+footer {
+  width: 100%;
+  background-color: #363636;
+  color: #fff;
+  text-align: center;
+  min-height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* MEDIA QUERIES */
+@media only screen and (min-width: 768px) {
+  .content {
+    margin: 15vh 5vw;
+  }
+
+  .tag-1 {
+    font-size: 3em;
+  }
+
+  .tag-2 {
+    font-size: 1.8em
+  }
+
+  .text-share img {
+    float: right;
+  }
+
+  .info {
+    width: 56%;
+    display: inline-block;
+    float: left;
+    margin-right: 1%;
+    padding: 1%;
+  }
+
+  .voting {
+    display: inline-block;
+  }
+
+  .form {
+    width: 40%;
+    display: inline-block;
+  }
+
+  .login-form {
+    width: 500px;
+  }
+
+  .team-choice {
+    width: 45%;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .content {
+    margin: 15vh 15vw;
+  }
+
+  .tag-1 {
+    font-size: 3.5em;
+  }
+
+  .tag-2 {
+    font-size: 2em
+  }
+
+  .tag-3 {
+    font-size: 1.5em;
+  }
+
+  .tag-4 {
+    font-size: 1.3em;
+  }
+
+  .team-choice {
+    width: 46%;
+    margin-left: 1%;
+  }
+
+  input#share {
+    width: 25%;
+  }
+}
+
+@media only screen and (min-width: 1600px) {
+  .voters .flex-cell:nth-child(1), .winners .flex-cell:nth-child(1) {
+    display: none;
+  }
+
+  .flex-row.winners:first-child, .flex-row.winners:last-child {
+    flex-grow: 1;
+    flex-basis: 0;
+  }
+
+  .flex-row.winners:nth-child(n+2):nth-last-child(n+2) {
+    flex-grow: 3;
+    flex-basis: 0;
+  }
+
+  .flex-row.voters:nth-child(1) {
+    flex-grow: 1;
+    flex-basis: 0;
+  }
+
+  .flex-row.voters:nth-child(2) {
+    flex-grow: 3;
+    flex-basis: 0;
+  }
+
+  .flex-row.voters:nth-child(3) {
+    flex-grow: 3;
+    flex-basis: 0;
+  }
+
+  .flex-row.voters:nth-child(4) {
+    flex-grow: 5;
+    flex-basis: 0;
+  }
+
+  .flex-row.voters:nth-last-child(-n+2) {
+    flex-grow: 1;
+    flex-basis: 0;
+  }
+
+  .voter, .winner {
+    display: flex;
+  }
+}
+
+@media only screen and (min-width: 1900px) {
+  .tag-1 {
+    font-size: 5em;
+  }
+
+  .tag-2 {
+    font-size: 2.5em
+  }
+
+  .tag-3 {
+    font-size: 1.7em;
+  }
+
+  .tag-4 {
+    font-size: 1.5em;
+  }
+}
